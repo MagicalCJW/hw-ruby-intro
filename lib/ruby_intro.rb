@@ -4,10 +4,35 @@
 
 def sum arr
   # YOUR CODE HERE
+  x = 0
+  arr.each do |value|
+    x += value
+  end
+  return x
 end
 
 def max_2_sum arr
   # YOUR CODE HERE
+  if arr.length == 0
+    return 0
+  end
+  if arr.length == 1
+    return arr[0]
+  end
+  x = 0
+  arr.each do |value|
+    if value >= x
+      x = value
+    end
+  end
+  arr.delete(x)
+  y = 0
+  arr.each do |value|
+    if value >= y
+      y = value
+    end
+  end
+  return x+y
 end
 
 def sum_to_n? arr, n
