@@ -13,26 +13,14 @@ end
 
 def max_2_sum arr
   # YOUR CODE HERE
-  if arr.length == 0
+  if arr.empty?
     return 0
   end
   if arr.length == 1
     return arr[0]
   end
-  x = 0
-  arr.each do |value|
-    if value >= x
-      x = value
-    end
-  end
-  arr.delete(x)
-  y = 0
-  arr.each do |value|
-    if value >= y
-      y = value
-    end
-  end
-  return x+y
+  arr.sort!
+  return arr[-1]+arr[-2]
 end
 
 def sum_to_n? arr, n
