@@ -25,6 +25,16 @@ end
 
 def sum_to_n? arr, n
   # YOUR CODE HERE
+  if arr.empty? || arr.length==1
+    return false
+  end
+  arr.each do 
+    res = n-arr.shift
+    if arr.include?(res)
+      return true
+    end
+  end
+  return false
 end
 
 # Part 2
